@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://CelulaAnimal.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Test/celula_bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Test/celula.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/MitNormal.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Resposta.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/NucNormal.png" type="Texture" id=6]
+[ext_resource path="res://alternativa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Test/dialog.png" type="Texture" id=8]
+[ext_resource path="res://Font/Roboto-Regular.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 9 )
+
+[node name="CelulaAnimal" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Background" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="BG" type="Sprite" parent="Background"]
+position = Vector2( 959.28, 307.747 )
+scale = Vector2( 1.38907, 1.38907 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 938.367, 295.37 )
+texture = ExtResource( 3 )
+
+[node name="Mitocondria" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Mitocondria" type="Sprite" parent="Mitocondria"]
+position = Vector2( 896.803, 335.066 )
+rotation = 1.309
+texture = ExtResource( 4 )
+
+[node name="Campo" type="Sprite" parent="Mitocondria"]
+position = Vector2( 717.494, 340.659 )
+scale = Vector2( 1, 0.768 )
+texture = ExtResource( 5 )
+
+[node name="Line2D" type="Line2D" parent="Mitocondria"]
+points = PoolVector2Array( 837.643, 334.175, 871.909, 334.175 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+texture_mode = 1611595776
+
+[node name="Nucleo" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Line2D" type="Line2D" parent="Nucleo"]
+position = Vector2( 1035, 264 )
+points = PoolVector2Array( -5.40689, -8.13707, 44.927, -8.13707 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+texture_mode = 1611595776
+
+[node name="Nucleo" type="Sprite" parent="Nucleo"]
+position = Vector2( 1006.47, 258.588 )
+texture = ExtResource( 6 )
+
+[node name="Campo" type="Sprite" parent="Nucleo"]
+position = Vector2( 1190.95, 257.59 )
+scale = Vector2( 1, 0.768 )
+texture = ExtResource( 5 )
+
+[node name="Alternativas" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Alt1" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 409.984, 691.901 )
+
+[node name="Alt2" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 789.225, 690.901 )
+
+[node name="Alt3" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1179.04, 692.218 )
+
+[node name="Alt4" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 408.509, 802.852 )
+
+[node name="Alt5" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 796.225, 806.169 )
+
+[node name="Alt6" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1182.56, 809.962 )
+
+[node name="Alt7" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 803.596, 919.926 )
+
+[node name="Alt11" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1186.19, 915.198 )
+
+[node name="Alt12" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1540.36, 916.911 )
+
+[node name="Alt8" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 406.227, 920.782 )
+
+[node name="Alt9" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1537.17, 805.85 )
+
+[node name="Alt10" parent="Alternativas" instance=ExtResource( 7 )]
+position = Vector2( 1539.4, 692.558 )
+
+[node name="Dialog" type="Sprite" parent="."]
+position = Vector2( 958.36, 116.557 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Dialog"]
+margin_left = -236.0
+margin_top = -75.0
+margin_right = 236.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Essa célula pertence a organismos
+unicelulares muito simples, que vivem sozinhos ou em colônias e podem
+causar doenças."
+align = 1
+valign = 1
+autowrap = true

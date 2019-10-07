@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Resposta.png" type="Texture" id=2]
+[ext_resource path="res://Font/Roboto-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 118.49, 21.2859 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D"]
+position = Vector2( 448.4, 200.45 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1.78814e-006 )
+scale = Vector2( 1, 0.768417 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -118.0
+margin_top = -20.0
+margin_right = 118.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "Alternativa"
+align = 1
+valign = 1
+[connection signal="input_event" from="." to="." method="_on_Area2D_input_event"]
